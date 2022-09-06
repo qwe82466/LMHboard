@@ -4,4 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.board.persistence.BoardMapper">
 
+	<select id="getList" resultType="com.board.domain.BoardVO"><!-- 리스트타입이 아니라 그안에 있는 하나의 데이터 타입--> 
+		select * from springBoard
+	</select>
+	
+	<insert id="register">
+		insert into springBoard values(springBoard_seq.nextVal,'#{title}','#{content}', '#{writer}', sysdate);
+	</insert>
+	
+	
+	
+	
 </mapper>
